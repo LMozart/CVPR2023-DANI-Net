@@ -25,7 +25,7 @@
 
 
   <title>DANI-Net: Uncalibrated Photometric Stereo by Differentiable Shadow Handling, Anisotropic Reflectance Modeling, and Neural Inverse Rendering</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/bunny.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -71,11 +71,11 @@
                     <a href="https://personal.ntu.edu.sg/exdjiang/" target="_blank">Xudong Jiang</a><sup>1</sup>,
                   </span>
                   </div>
-<!-- 
+
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<sup>2</sup>,<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div> -->
+                    <span class="author-block"><font size="4"><sup>1</sup>Nanyang Technological University, <sup>2</sup>Zhejiang University, <sup>3</sup>Peking University</font> <br>CVPR 2023</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
@@ -149,6 +149,115 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- <section class="section hero is-light"> -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            The proposed DANI-Net differs from other PS or UPS methods in two aspects: 
+            <ol>
+              <li> <b>Shadow Handling</b>. The path in the sequence of inverse rendering errors, shadow maps, and surface normal maps (or light conditions) of the DANI-Net is differentiable; </li> 
+              <li> <b>Reflectance Modeling</b>. DANI-Net adopts an anisotropic reflectance model. </li> 
+            </ol>
+            The proposed DANI-Net produces a smoother and more realistic shadow map, thanks to the differentiable shadow handling, and renders a more realistic image and Bidirectional Reflectance Distribution Function (BRDF) sphere (of the reference point) due to the anisotropic reflectance modeling.
+          </p>
+        </div>
+           <img src="./static/images/teaser.png" alt="Teaser" style="width:60%;">
+        </div>
+        </div>
+    </div>
+  </div>
+<!-- </section> -->
+<br>
+<br>
+<br>
+
+<!-- <section class="section hero is-light"> -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Soft Shadow Handling</h2>
+        <div class="content has-text-justified">
+          <p>
+            DANI-Net implements a differentiable shadow handling method that fully exploits shadow cues to solve UPS. DANI-Net can generate realistic soft shaodw maps given arbitrary light directions.
+          </p>
+        </div>
+          <img src="./static/images/shadow.gif" alt="Teaser" style="width:85%;">
+          
+      </div>
+    </div>
+  </div>
+<!-- </section> -->
+
+<br>
+<br>
+<br>
+
+
+<!-- <section class="section hero is-light"> -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Anisotropic Reflectance Modeling</h2>
+        <div class="content has-text-justified">
+          <p>
+            DANI-Net represents the spatially varying anisotropic specularity as a weighted sum of Anisotropic Spherical Gaussian (ASG). Thanks to ASG, DANI-Net can generate realistic appearance given arbitrary light conditions.
+          </p>
+        </div>
+          <img src="./static/images/mat.gif" alt="Teaser" style="width:80%;">
+      </div>
+    </div>
+  </div>
+<!-- </section> -->
+
+<br>
+<br>
+<br>
+
+<div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Relighting</h2>
+      <div class="content has-text-justified">
+        <p>
+          Given arbitrary directional lights, DANI-Net can relight the object with realistic appearance.
+        </p>
+      </div>
+        <img src="./static/images/relighting.gif" alt="Teaser" style="width:85%;">
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video Presentation</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/4HSLZi7bfPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+<br>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{li2023dani,
+      title={DANI-Net: Uncalibrated Photometric Stereo by Differentiable Shadow Handling, Anisotropic Reflectance Modeling, and Neural Inverse Rendering},
+      author={Li, Zongrui and Zheng, Qian and Shi, Boxin and Pan, Gang and Jiang, Xudong},
+      booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+      year={2023}}
+</code></pre>
+  </div>
+</section>
 
   </body>
   </html>
