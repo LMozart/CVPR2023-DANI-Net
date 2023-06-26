@@ -22,7 +22,9 @@ conda activate dani-net
 
 ## Train
 ### Train on benchmark datasets.
-DANI-Net uses wandb.ai to The datasets can be downloaded according to the table below:
+DANI-Net uses [wandb.ai](https://wandb.ai/site) for the training logs recording. Please register an account first if you would like to use it. Otherwise, please change the 'logger_type' of the config file to `tensorboard'.
+
+The datasets can be downloaded according to the table below:
 
 |  Dataset   | Link  |
 |  ----  | ----  |
@@ -36,7 +38,7 @@ Please download and unzip it to the 'data' folder in the root directory. To test
 python train.py --config configs/diligent/YOUR_OBJ_NAME.yml --exp_code YOUR_EXP_TAG
 ```
 
-To test DANI-Net on multiple objects in an particular dataset, please run:
+To test DANI-Net on multiple objects in a particular dataset, please run:
 ```shell
 # DiLiGenT
 sh scripts/train_diligent.sh
