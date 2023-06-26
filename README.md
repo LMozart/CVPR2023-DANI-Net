@@ -30,6 +30,7 @@ The datasets can be downloaded according to the table below:
 | DiLiGenT10^2 Benchmark | [Link](https://photometricstereo.github.io/diligent102.html) |
 | Gourd & Apple| [Link](https://drive.google.com/drive/folders/1_bOM2nghnYTBrlmNOqRh5y5elPjvShOb?usp=sharing)|
 | Light Stage Data Gallery | [Link](http://vgl.ict.usc.edu/Data/LightStage/) |
+
 Please download and unzip it to the 'data' folder in the root directory. Please create the 'data' folder manually when you first use this code.To test DANI-Net on a particular object, you may run:
 ```shell
 python train.py --config configs/diligent/YOUR_OBJ_NAME.yml --exp_code YOUR_EXP_TAG
