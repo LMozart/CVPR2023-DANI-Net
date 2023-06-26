@@ -1,0 +1,5 @@
+data/
+runs/
+__pycache__/
+ref_code/
+wandb/
