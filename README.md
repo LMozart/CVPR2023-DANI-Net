@@ -22,7 +22,7 @@ conda activate dani-net
 
 ## Train
 ### Train on benchmark datasets.
-The datasets can be downloaded according to the table below:
+DANI-Net uses wandb.ai to The datasets can be downloaded according to the table below:
 
 |  Dataset   | Link  |
 |  ----  | ----  |
@@ -31,7 +31,7 @@ The datasets can be downloaded according to the table below:
 | Gourd & Apple| [Link](https://drive.google.com/drive/folders/1_bOM2nghnYTBrlmNOqRh5y5elPjvShOb?usp=sharing)|
 | Light Stage Data Gallery | [Link](http://vgl.ict.usc.edu/Data/LightStage/) |
 
-Please download and unzip it to the 'data' folder in the root directory. Please create the 'data' folder manually when you first use this code.To test DANI-Net on a particular object, you may run:
+Please download and unzip it to the 'data' folder in the root directory. To test DANI-Net on a particular object, you may run:
 ```shell
 python train.py --config configs/diligent/YOUR_OBJ_NAME.yml --exp_code YOUR_EXP_TAG
 ```
@@ -48,12 +48,16 @@ sh scripts/train_diligent100.sh
 sh scripts/train_apple.sh
 
 # Light Stage
-sh train_lightstage.sh
+sh scripts/train_lightstage.sh
 ```
+
+### Train on your own datasets.
+Please create a data loader for your own dataset in 'utils/dataset_loader/' and add the corresponding code 'utils/dataset_utils/'. You should also create the corresponding config file following the template in 'configs/template.yml'.
 
 ## Test
 
-We provide all the trained models in this [link](https://drive.google.com/drive/folders/1Z32BrBHluyETLE_VBmPcolSKm66dnGrP?usp=sharing), download and unzip them to the 'runs' folder in the root directory. Please create the 'runs' folder manually when you first use this code.
+We provide all the trained models in this [link](https://drive.google.com/drive/folders/1Z32BrBHluyETLE_VBmPcolSKm66dnGrP?usp=sharing), download and unzip them to the 'runs' folder in the root directory. 
+
 To test the results in an particular dataset, please run:
 ```shell
 # DiLiGenT

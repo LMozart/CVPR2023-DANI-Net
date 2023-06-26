@@ -6,21 +6,7 @@ import glob
 import scipy.io as sio
 
 """
-Normal coordinates for DiLiGenT dataset: (same for light direction)
-    y    
-    |   
-    |  
-    | 
-     --------->   x
-   /
-  /
- z 
-x direction is looking right
-y direction is looking up
-z direction is looking outside the image
-
-we convert it to :
-Normal coordinates for DiLiGenT dataset: (same for light direction)
+we convert the normal and light direction for:
      --------->   x
     |   
     |  
@@ -29,7 +15,6 @@ Normal coordinates for DiLiGenT dataset: (same for light direction)
 x direction is looking right
 y direction is looking down
 z direction is looking into the image
-
 """
 
 
