@@ -4,6 +4,7 @@ dataset:
   shadow_threshold: 0.1
   sparse_input: null
   sparse_input_random_seed: null
+  occluding_bound: False
 experiment:
   batch_size: 8 * 1
   cuda: cuda:0
