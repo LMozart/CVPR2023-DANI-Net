@@ -96,7 +96,8 @@ class ExpLog(object):
         savepath = os.path.join(self.log_path, 'model_params_%05d.pth' % epoch)
         torch.save(ckpt, savepath)
         print('Saved checkpoints at', savepath)
-        wandb.save(savepath)
+        if self.cfg.logger_type == "wandb":
+            wandb.save(savepath)
     
     def log_status(self, epoch, metrics, status):
         if self.cfg.logger_type == "wandb":
