@@ -33,7 +33,7 @@ class UPSDataset(Dataset):
         self.cnt_nml, cnt = self._compute_contour_normal(data_dict['mask'])
         
         ## Particularly Handling for DiLiGenT100's non-occluding boundary.
-        if dataset == "Anisotropic" and obj_name.split("_")[0] in ["BUNNY", "HEXAGON", "NUT", "PENTAGON", "PROPELLER", "SQUARE", "TURBINE"]:
+        if dataset == "DiLiGenT100" and obj_name.split("_")[0] in ["BUNNY", "HEXAGON", "NUT", "PENTAGON", "PROPELLER", "SQUARE", "TURBINE"]:
             self.cnt_nml = torch.zeros_like(self.cnt_nml)
             self.cnt_nml[..., 2] = torch.tensor(-1.)
             self.cnt_nml = self.cnt_nml * cnt
