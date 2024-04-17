@@ -8,8 +8,9 @@
 
 Given a set of observed images captured under varying, parallel lights, DANI-Net recovers light conditions (directions and intensities), surface normal, anisotropic reflectance, and soft shadow map.
 ## Updates
-- [2024-04-17] We have fixed some bugs in scale-invariant error calculation for light intensity evaluation. These bug may lead to a unexpected large error. We also update the configuration files for DiLiGenT100 datasets.
-- [2024-04-10] We have fixed bugs in calculating silhouette loss on DiLiGenT100 datasets.
+- [2024-04-17] We have fixed some bugs in scale-invariant error calculation for light intensity evaluation. These bugs may lead to unexpected large errors. We also update the configuration files for DiLiGenT100 datasets.
+- [2024-04-10] We have fixed some bugs in calculating silhouette loss on DiLiGenT100 datasets.
+
 ## Our Relighting Results
 <p align="center">
     <img src='assets/relighting.gif'>
