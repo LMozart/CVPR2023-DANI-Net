@@ -122,6 +122,16 @@ class ExpLog(object):
                 cv.imwrite(pjoin(self.log_path_img, "img.png"), metrics['plots']['img'])
                 cv.imwrite(pjoin(self.log_path_nml, "nml.png"), metrics['plots']['nml'])
                 cv.imwrite(pjoin(self.log_path_mat, "mat.png"), metrics['plots']['mat'])
+        elif self.cfg.logger_type == "tensorboard":
+            if status == "train":
+                self.writer.add_scalar('train/lgt_mae', metrics["lgt_mae"], epoch)
+                self.writer.add_scalar('train/lgt_int', metrics["lgt_int"], epoch)
+                self.writer.add_scalar('train/nml_mae', metrics["nml_mae"], epoch)
+            elif status == "eval":
+                self.writer.add_image('train/nml', metrics['plots']['nml'], global_step=epoch, dataformats='HWC')
+                cv.imwrite(pjoin(self.log_path_nml, "est_nml.png"), metrics['plots']['nml'])
         if status == "test":
-            cv.imwrite(pjoin(self.log_path_nml, "est_nml.png"), metrics['plots']['est_nml'])
-            cv.imwrite(pjoin(self.log_path_nml, "est_nml_err.png"), metrics['plots']['est_nml_err'])
+            print("test:", self.log_path_img)
+            cv.imwrite(pjoin(self.log_path_img, "img.png"), metrics['plots']['img'])
+            cv.imwrite(pjoin(self.log_path_nml, "nml.png"), metrics['plots']['nml'])
+            cv.imwrite(pjoin(self.log_path_mat, "mat.png"), metrics['plots']['mat'])

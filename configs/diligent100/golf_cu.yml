@@ -14,12 +14,13 @@ experiment:
   randomseed: null
   save_every_epoch: 500
   start_epoch: 1
-logger_type: wandb
+logger_type: tensorboard
+
 loss:
   contour_factor: 0.5
   depth_tv_factor: 0.01
   diff_tv_factor: 0.01
-  normal_tv_factor: 0.0
+  normal_tv_factor: 0.01
   normalize_sigma_factor: 0.01
   regularize_epoches: 0.25
   rgb_loss: l1

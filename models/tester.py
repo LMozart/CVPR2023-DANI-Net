@@ -370,7 +370,7 @@ class DepthBaseTester(object):
         metric = {'rgb_loss': rgb_loss_val,
                   'nml_mae': cal_mae(pred['est_nml'].detach().cpu(), data['gt_nml'][0]),
                   'lgt_mae': cal_mae(pred['est_ldir'].detach().cpu(), data['gt_ldir'][0]),
-                  'lgt_int': cal_ints_acc(pred['est_lint'].detach().cpu(), data['gt_lint'][0])}
+                  'lgt_int': cal_ints_acc(data['gt_lint'][0], pred['est_lint'].detach().cpu())}
         return metric
     
     def eval(self, pred, data):

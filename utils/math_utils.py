@@ -5,6 +5,8 @@ import numpy as np
 
 def cal_mae(gt_l, pred_l):
     dot_product = (gt_l * pred_l).sum(-1).clamp(-1, 1)
+    gt_l = torch.nn.functional.normalize(gt_l, p=2, dim=-1)
+    pred_l = torch.nn.functional.normalize(pred_l, p=2, dim=-1)
     angular_err = torch.acos(dot_product) * 180.0 / math.pi
     l_err_mean = angular_err.mean()
     return l_err_mean.item()
