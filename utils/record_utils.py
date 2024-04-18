@@ -8,6 +8,7 @@ from torch.utils.tensorboard import SummaryWriter
 import torch
 import numpy as np
 import imageio
+import scipy.io as scio
 
 def process_images(pixels, h, w, channel, idxp, idxp_invalid, bounding_box_int):
     img = torch.ones((h, w, channel), device=pixels.device)
@@ -131,7 +132,7 @@ class ExpLog(object):
                 self.writer.add_image('train/nml', metrics['plots']['nml'], global_step=epoch, dataformats='HWC')
                 cv.imwrite(pjoin(self.log_path_nml, "est_nml.png"), metrics['plots']['nml'])
         if status == "test":
-            print("test:", self.log_path_img)
             cv.imwrite(pjoin(self.log_path_img, "img.png"), metrics['plots']['img'])
             cv.imwrite(pjoin(self.log_path_nml, "nml.png"), metrics['plots']['nml'])
             cv.imwrite(pjoin(self.log_path_mat, "mat.png"), metrics['plots']['mat'])
+            scio.savemat(pjoin(self.log_path_nml, "nml.mat"), {'Normal_est':metrics['nml_mat']})

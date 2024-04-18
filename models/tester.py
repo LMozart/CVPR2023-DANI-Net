@@ -455,7 +455,14 @@ class DepthBaseTester(object):
         
         brdf_stack = np.concatenate((diff_map, shadow_map, spec_map, shad_map), axis=1)
         plots["mat"] = brdf_stack
+       
+        # Normal mat.
+        nml_mat = torch.zeros((self.H, self.W, 3), device=temp_est_nml.device)
+        nml_mat[self.idxp] = temp_est_nml
+        nml_mat = nml_mat.cpu().numpy()
+        
         metric = {'rgb_loss': rgb_loss,
+                  'nml_mat': nml_mat,
                   'nml_mae': nml_mae,
                   'lgt_mae': cal_mae(pred['est_ldir'].detach().cpu(), data['gt_ldir']),
                   'lgt_int': cal_ints_acc(pred['est_lint'].detach().cpu(), data['gt_lint'][0]),
