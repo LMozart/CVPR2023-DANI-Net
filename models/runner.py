@@ -23,6 +23,11 @@ class DepthBaseRunner(object):
         params_list.append({'params': self.light_model.parameters()})
         params_list.append({'params': self.params.parameters()})
 
+        if hasattr(cfg.strategy, 'detach_light'):
+            self.d_light = cfg.strategy.detach_light
+        else:
+            self.d_light = False
+
         end_epoch = cfg.experiment.end_epoch
 
         self.optimizer = optim.Adam(params_list, lr=cfg.optimizer.lr)
@@ -219,7 +224,7 @@ class DepthBaseRunner(object):
         xyz = xyz.repeat(bs, 1)
 
         est_s= differentiable_shadow(xyz=xyz,
-                                     ld=est_ldir,
+                                     ld=est_ldir.detach() if self.d_light else est_ldir,
                                      depth=depth_map,
                                      bounding_box=self.bbox_uv,
                                      mask=self.mask,

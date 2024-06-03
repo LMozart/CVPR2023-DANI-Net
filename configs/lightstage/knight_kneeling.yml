@@ -18,6 +18,7 @@ experiment:
 strategy:
   reg_anneal: false
   sigma_l1_reg: false
+  detach_light: true
 loss:
   contour_factor: 0.1
   diff_tv_factor: 0.01

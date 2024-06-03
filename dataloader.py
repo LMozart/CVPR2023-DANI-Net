@@ -44,9 +44,8 @@ class UPSDataset(Dataset):
         self.valid_ocord = torch.stack([self.o_idx[1] / W, 
                                         self.o_idx[0] / H], dim=-1)
         
-        # Problem of Cord
-        valid_cord_max, _ = self.valid_ocord.max(dim=0)
-        valid_cord_min, _ = self.valid_ocord.min(dim=0)
+        valid_cord_max, _ = valid_cord.max(dim=0)
+        valid_cord_min, _ = valid_cord.min(dim=0)
 
         self.bbox_uv    = [valid_cord_max,
                            valid_cord_min]

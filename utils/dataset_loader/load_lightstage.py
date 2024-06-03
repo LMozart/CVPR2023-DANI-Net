@@ -71,9 +71,12 @@ def load_lightstage(path, scale=1):
     for img_file in img_file_list:
         if read_exr_file:
             img = data_from_exr(img_file)
+            img = img / 0.2
         else:
             img = cv.imread(img_file)[:,:,::-1].astype(np.float32) / 255.
             img = img ** 2.2
+            if "plant_left" in path:
+                img = img / 0.2
         if scale!=1:
             width = int(img.shape[1] / scale)
             height = int(img.shape[0] / scale)
