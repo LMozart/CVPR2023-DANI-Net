@@ -234,7 +234,7 @@ class DepthBaseTester(object):
         est_spec_coeff = est_spec_coeff_0.repeat(bs, 1)
         
         est_spec_coeff = est_spec_coeff[..., self.num_bases:].view(-1, self.num_bases, 3)
-        est_spec_coeff = dynamic_basis(est_spec_coeff, epoch, end_epoch, self.num_bases)
+        # est_spec_coeff = dynamic_basis(est_spec_coeff, epoch, end_epoch, self.num_bases)
         est_spec = self.asg_model(light=est_ldir, 
                                   normal=est_nml,
                                   mu=est_spec_coeff)
